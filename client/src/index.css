@@ -1,0 +1,36 @@
+:root {
+  --background-primary: #FFFFFF;
+  --background-secondary: #EEEEEE;
+  --text-primary: #000000;
+  --text-secondary: #62666e;
+  --border-color: #E9EBF0;
+}
+
+[data-theme='dark'] {
+  --background-primary: #2B343B;
+  --background-secondary: #1E272E;
+  --text-primary: #D5D6D7;
+  --text-secondary: #62666e;
+  --border-color: #1E272E;
+}
+
+html, body, #root, .App {
+  height: 100%,
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

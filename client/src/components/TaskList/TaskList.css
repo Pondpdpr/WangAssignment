@@ -1,0 +1,5 @@
+.tasklist {
+    background-color: var(--background-primary);
+    height: fit-content;
+    padding : 0% 1% 1% 1%;
+  }

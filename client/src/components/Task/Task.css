@@ -1,0 +1,49 @@
+.taskbox {
+  padding: 10px;
+  margin: 20px auto;
+  width: auto;
+  height: fit-content;
+  border-width: 1px;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-radius: 20px;
+  background-color: var(--background-secondary);
+}
+
+.task1 {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.task1 input {
+  height: 25px;
+  width: 25px;
+  margin-right: auto;
+}
+
+.task1 div {
+  font-size: calc(10px + 2vmin);
+  color: var(--text-secondary);
+}
+
+.task2 {
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  padding: 2px 0px;
+}
+
+.task2 p {
+  margin: 0px;
+  font-size: calc(15px + 2vmin);
+}
+
+.task3 p {
+  margin: 0px;
+  word-break: break-all;
+  white-space: normal;
+  font-size: calc(5px + 1.5vmin);
+  white-space: pre-wrap;
+}

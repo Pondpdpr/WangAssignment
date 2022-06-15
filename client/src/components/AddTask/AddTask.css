@@ -1,0 +1,56 @@
+.addtaskbox {
+  padding: 10px;
+  margin: 20px auto;
+  width: auto;
+  height: fit-content;
+  border-width: 1px;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-radius: 20px;
+  background-color: var(--background-secondary);
+}
+
+.addtaskform {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.addtaskform > label {
+  margin: 0;
+  margin-right: auto;
+}
+.taskform1 {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(15px + 2vmin);
+}
+
+.taskform2 {
+  display: flex;
+  width: 100%;
+}
+
+input, button {
+  border-width: 2px;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-radius: 5px;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+.taskform2 > #addtaskname {
+  margin-right: auto;
+  width: 100%;
+}
+
+#addtaskdes {
+  resize: none;
+  border-width: 2px;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-radius: 5px;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
