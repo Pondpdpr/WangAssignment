@@ -5,7 +5,7 @@ function Task(props) {
 
     const [taskId, setTaskId] = useState(props.taskId);
     const [taskName, setTaskName] = useState(props.taskName);
-    const [taskDeadLine, setTaskDeadLine] = useState(props.taskDeadLine.slice(0, 10));
+    const [taskDeadLine, setTaskDeadLine] = useState(new Date(props.taskDeadLine));
     const [taskDes, setTaskDes] = useState(props.taskDes);
     const [isTaskDone, setTaskDone] = useState(props.isTaskDone);
     const [isShowOption, setShowOption] = useState(false);
@@ -23,7 +23,7 @@ function Task(props) {
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
                                 taskName: taskName,
-                                taskDeadLine: new Date(taskDeadLine + "T00:00:00Z"),
+                                taskDeadLine: taskDeadLine,
                                 taskDes: taskDes,
                                 isTaskDone: isTaskDone
                             })
@@ -37,7 +37,13 @@ function Task(props) {
                         </div>
                         <div className="taskform2">
                             <input id="addtaskname" type="text" value={taskName} onChange={(event) => { setTaskName(event.target.value) }} />
-                            <input id="addtaskdeadline" type="date" value={taskDeadLine} onChange={(event) => { setTaskDeadLine(event.target.value) }} />
+                            <input
+                                id="addtaskdeadline"
+                                type="date"
+                                name="taskDeadLine"
+                                value={taskDeadLine.toISOString().slice(0, 10)}
+                                onChange={(event) => { setTaskDeadLine(new Date(event.target.value + "T00:00:00Z")) }}
+                            />
                         </div>
                         <textarea id="addtaskdes" placeholder="Task Description" rows={5} value={taskDes} onChange={(event) => { setTaskDes(event.target.value) }} />
                     </form>
@@ -81,7 +87,7 @@ function Task(props) {
                     </div>
                     <div className="task2">
                         <p>{taskName}</p>
-                        <p>{taskDeadLine}</p>
+                        <p>Due:{taskDeadLine.toString().slice(4,15)}</p>
                     </div>
                     <div className="task3">
                         <p>{taskDes}</p>

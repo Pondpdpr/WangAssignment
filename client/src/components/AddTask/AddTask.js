@@ -9,24 +9,8 @@ AddTask.propTypes = {
 function AddTask({ isTaskUpdate }) {
 
     const [taskName, setTaskName] = useState("");
-    const [taskDeadLine, setTaskDeadLine] = useState(new Date().toISOString().slice(0, 10));
+    const [taskDeadLine, setTaskDeadLine] = useState(new Date());
     const [taskDes, setTaskDes] = useState("");
-
-
-    // const handleSubmit = (event) => {
-    //     console.log("tstibn");
-    //     event.preventDefualt();
-    //     console.log("tstibn");
-    //     // fetch("localhost:9000/task", {
-    //     //     method: "POST",
-    //     //     body: {
-    //     //         taskName: taskName,
-    //     //         taskDeadLine: new Date(taskDeadLine),
-    //     //         taskDes: taskDes,
-    //     //         isTaskDone: false
-    //     //     }
-    //     // })
-    // }
 
     return (
         <div className="addtaskbox">
@@ -38,7 +22,7 @@ function AddTask({ isTaskUpdate }) {
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
                             taskName: taskName,
-                            taskDeadLine: new Date(taskDeadLine + "T00:00:00Z"),
+                            taskDeadLine: taskDeadLine,
                             taskDes: taskDes,
                             isTaskDone: false
                         })
@@ -54,7 +38,13 @@ function AddTask({ isTaskUpdate }) {
                 </div>
                 <div className="taskform2">
                     <input id="addtaskname" type="text" name="taskName" value={taskName} onChange={(event) => { setTaskName(event.target.value) }} />
-                    <input id="addtaskdeadline" type="date" name="taskDeadLine" value={taskDeadLine} onChange={(event) => { setTaskDeadLine(event.target.value) }} />
+                    <input 
+                        id="addtaskdeadline" 
+                        type="date" 
+                        name="taskDeadLine" 
+                        value={taskDeadLine.toISOString().slice(0,10)} 
+                        onChange={(event) => { setTaskDeadLine(new Date(event.target.value + "T00:00:00Z")) }} 
+                    />
                 </div>
                 <textarea id="addtaskdes" placeholder="Task Description" rows={5} value={taskDes} name="taskDes" onChange={(event) => { setTaskDes(event.target.value) }} />
             </form>

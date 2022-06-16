@@ -17,7 +17,7 @@ function Navbar(props) {
             <button onClick={props.switchTheme}>
                 {props.theme === 'light' ? 'Light' : 'Dark'} Theme
             </button>
-            <p className="navbar-timer"> {time.toLocaleTimeString()} </p>
+            <p className="navbar-timer"> {time.toString().slice(4,24)} </p>
         </nav>
     )
 }
