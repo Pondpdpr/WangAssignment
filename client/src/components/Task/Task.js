@@ -18,18 +18,22 @@ function Task(props) {
                     <form className="addtaskform" onSubmit={(e) => {
                         e.preventDefault();
                         const url = "http://localhost:9000/task/" + taskId;
-                        fetch(url, {
-                            method: "PUT",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                                taskName: taskName,
-                                taskDeadLine: taskDeadLine,
-                                taskDes: taskDes,
-                                isTaskDone: isTaskDone
+                        if (taskName.length >= 1) {
+                            fetch(url, {
+                                method: "PUT",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    taskName: taskName,
+                                    taskDeadLine: taskDeadLine,
+                                    taskDes: taskDes,
+                                    isTaskDone: isTaskDone
+                                })
                             })
-                        })
-                        props.isTaskUpdate(true);
-                        setEdit(false);
+                            props.isTaskUpdate(true);
+                            setEdit(false);
+                        } else {
+                            alert("Task's name is required")
+                        }
                     }}>
                         <div className="taskform1">
                             <label htmlFor="addtaskname">New Task Name:</label>

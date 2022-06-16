@@ -13,26 +13,26 @@ function TaskList() {
         fetch("http://localhost:9000/task")
             .then((res) => res.json())
             .then((res) => setTasks(res))
-            setTaskUpdate(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        setTaskUpdate(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [taskUpdate])
 
     return (
         <div className="tasklist">
+            <AddTask isTaskUpdate={setTaskUpdate} />
             {
                 tasks.map((task) =>
-                    <Task 
-                        key={task._id} 
+                    <Task
+                        key={task._id}
                         taskId={task._id}
-                        taskName={task.taskName} 
-                        taskDeadLine={task.taskDeadLine} 
-                        taskDes={task.taskDes} 
-                        isTaskDone={task.isTaskDone} 
+                        taskName={task.taskName}
+                        taskDeadLine={task.taskDeadLine}
+                        taskDes={task.taskDes}
+                        isTaskDone={task.isTaskDone}
                         isTaskUpdate={setTaskUpdate}
                     />
                 )
             }
-            <AddTask isTaskUpdate={setTaskUpdate} />
         </div>
     )
 }
