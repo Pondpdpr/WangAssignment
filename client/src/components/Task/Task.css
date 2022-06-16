@@ -52,6 +52,6 @@
   margin: 0px;
   word-break: break-all;
   white-space: normal;
-  font-size: calc(5px + 1vw);
+  font-size: calc(10px + 1vw);
   white-space: pre-wrap;
 }

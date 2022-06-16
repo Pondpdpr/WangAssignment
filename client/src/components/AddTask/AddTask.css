@@ -53,7 +53,7 @@ input, button {
 
 .taskform2 > #addtaskdeadline {
   font-family: "Poppins", sans-serif;
-  font-size: calc(5px + 1vw);
+  font-size: calc(10px + 1vw);
 }
 
 #addtaskdes {
@@ -65,7 +65,7 @@ input, button {
   background-color: var(--background-primary);
   color: var(--text-primary);
   font-family: "Poppins", sans-serif;
-  font-size: calc(5px + 1vw);
+  font-size: calc(10px + 1vw);
 }
 
 #addtaskbutton {

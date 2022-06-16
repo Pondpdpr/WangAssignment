@@ -3,7 +3,7 @@ const Task = require('../Models/Task');
 const ctrl = {
     // GET /task/
     getTask: (req, res) => {
-        Task.find().sort({"taskDeadLine" : 1})
+        Task.find().sort({"isTaskDone": 1,"taskDeadLine" : 1})
             .then((tasks) => res.send(tasks))
             .catch(() => res.status(404))
     },
