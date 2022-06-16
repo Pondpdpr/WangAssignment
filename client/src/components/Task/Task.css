@@ -10,6 +10,10 @@
   background-color: var(--background-secondary);
 }
 
+[completed='true'] {
+  color: var(--completed-task-text);
+}
+
 .task1 {
   display: flex;
   gap: 20px;
@@ -21,6 +25,7 @@
   height: 25px;
   width: 25px;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .task1 div {

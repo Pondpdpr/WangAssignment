@@ -64,6 +64,7 @@ function Task(props) {
                     className="taskbox"
                     onMouseEnter={() => setShowOption(true)}
                     onMouseLeave={() => setShowOption(false)}
+                    completed={isTaskDone.toString()}
                 >
                     <div className="task1">
                         <input
@@ -92,7 +93,7 @@ function Task(props) {
                                         .then(() => props.isTaskUpdate(true))
                                 }
                                 }>Delete</div>
-                                <div className="option" onClick={() => setEdit(true)}>Edit</div>
+                                {!isTaskDone && <div className="option" onClick={() => setEdit(true)}>Edit</div>}
                             </>
                         }
                     </div>

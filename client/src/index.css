@@ -4,6 +4,7 @@
   --text-primary: #000000;
   --text-secondary: #62666e;
   --border-color: #E9EBF0;
+  --completed-task-text : #678636;
 }
 
 [data-theme='dark'] {
@@ -12,6 +13,7 @@
   --text-primary: #D5D6D7;
   --text-secondary: #62666e;
   --border-color: #1E272E;
+  --completed-task-text : #6f8f3c;
 }
 
 html, body, #root, .App {
