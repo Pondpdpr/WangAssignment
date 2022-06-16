@@ -36,7 +36,14 @@ function Task(props) {
                             <button id="addtasksubmit" >Submit</button>
                         </div>
                         <div className="taskform2">
-                            <input id="addtaskname" type="text" value={taskName} onChange={(event) => { setTaskName(event.target.value) }} />
+                            <input
+                                id="addtaskname"
+                                type="text"
+                                name="taskName"
+                                value={taskName}
+                                onChange={(event) => { setTaskName(event.target.value) }}
+                                maxLength={30}
+                            />
                             <input
                                 id="addtaskdeadline"
                                 type="date"
@@ -86,8 +93,8 @@ function Task(props) {
                         }
                     </div>
                     <div className="task2">
-                        <p>{taskName}</p>
-                        <p>Due:{taskDeadLine.toString().slice(4,15)}</p>
+                        <p className="taskName">{taskName}</p>
+                        <p className="taskDeadLine">Due:{taskDeadLine.toString().slice(4, 15)}</p>
                     </div>
                     <div className="task3">
                         <p>{taskDes}</p>

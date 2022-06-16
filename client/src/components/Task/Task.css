@@ -24,7 +24,7 @@
 }
 
 .task1 div {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vw);
   color: var(--text-secondary);
 }
 
@@ -37,13 +37,21 @@
 
 .task2 p {
   margin: 0px;
-  font-size: calc(15px + 2vmin);
+  font-size: calc(15px + 1.5vw);
+}
+
+.taskName {
+  word-break: break-word;
+}
+
+.taskDeadLine {
+  text-align: right;
 }
 
 .task3 p {
   margin: 0px;
   word-break: break-all;
   white-space: normal;
-  font-size: calc(5px + 1.5vmin);
+  font-size: calc(5px + 1vw);
   white-space: pre-wrap;
 }

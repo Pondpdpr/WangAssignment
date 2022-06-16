@@ -15,9 +15,9 @@ function Navbar(props) {
         <nav className="navbar">
             <p className="navbar-title"> Your Task List</p>
             <button> Dark mode </button>
-            <label class="switch">
-                <input type="checkbox" onClick={props.switchTheme} checked={props.theme === 'dark'}/>
-                <span class="slider round"></span>
+            <label className="switch">
+                <input type="checkbox" onChange={props.switchTheme} checked={props.theme === 'dark'}/>
+                <span className="slider round"></span>
             </label>
             <p className="navbar-timer"> {time.toString().slice(4, 24)} </p>
         </nav>

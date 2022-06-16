@@ -27,6 +27,7 @@
 .navbar-timer {
   margin: 0;
   margin-left: auto;
+  text-align: right;
 }
 
 /* The switch - the box around the slider */

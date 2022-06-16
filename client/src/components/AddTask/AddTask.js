@@ -37,7 +37,14 @@ function AddTask({ isTaskUpdate }) {
                     <button id="addtasksubmit" >Submit</button>
                 </div>
                 <div className="taskform2">
-                    <input id="addtaskname" type="text" name="taskName" value={taskName} onChange={(event) => { setTaskName(event.target.value) }} />
+                    <input 
+                        id="addtaskname" 
+                        type="text" 
+                        name="taskName" 
+                        value={taskName} 
+                        onChange={(event) => { setTaskName(event.target.value) }} 
+                        maxLength={30}
+                    />
                     <input 
                         id="addtaskdeadline" 
                         type="date" 
