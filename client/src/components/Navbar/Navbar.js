@@ -14,10 +14,12 @@ function Navbar(props) {
     return (
         <nav className="navbar">
             <p className="navbar-title"> Your Task List</p>
-            <button onClick={props.switchTheme}>
-                {props.theme === 'light' ? 'Light' : 'Dark'} Theme
-            </button>
-            <p className="navbar-timer"> {time.toString().slice(4,24)} </p>
+            <button> Dark mode </button>
+            <label class="switch">
+                <input type="checkbox" onClick={props.switchTheme} checked={props.theme === 'dark'}/>
+                <span class="slider round"></span>
+            </label>
+            <p className="navbar-timer"> {time.toString().slice(4, 24)} </p>
         </nav>
     )
 }
