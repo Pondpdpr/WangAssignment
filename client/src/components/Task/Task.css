@@ -60,3 +60,7 @@
   font-size: calc(10px + 1vw);
   white-space: pre-wrap;
 }
+
+.option {
+  cursor: pointer;
+}
